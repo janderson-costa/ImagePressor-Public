@@ -16,7 +16,7 @@ html,
 body {
   font-family: app-font, sans-serif;
   font-size: 13px;
-  color: #000;
+  color: #333;
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -224,7 +224,7 @@ label:has(> input[type=radio]):hover input[type=checkbox],
 label:has(> input[type=radio]):hover input[type=radio],
 label:has(> input[type=radio]) > input[type=checkbox]:focus,
 label:has(> input[type=radio]) > input[type=radio]:focus {
-  box-shadow: 0 0 0 2.5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 2.5px rgba(51, 51, 51, 0.1);
 }
 
 label.checkbox,
@@ -338,7 +338,7 @@ input[type=range]::-moz-range-thumb {
   background-color: #555 !important;
 }
 .button.border {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(51, 51, 51, 0.4);
 }
 .button > span {
   margin-bottom: 0.08em;
@@ -507,7 +507,7 @@ form {
   display: grid;
   position: sticky;
   top: 0;
-  width: fit-content;
+  width: 100%;
   z-index: 1;
   transition: 0s;
   background-color: #fff;
@@ -521,6 +521,7 @@ form {
   position: relative;
   font-weight: bold;
   box-sizing: border-box;
+  background-color: #fff;
   padding-left: 8px;
   border-bottom: 1px solid #999;
   user-select: none;
@@ -573,13 +574,13 @@ form {
   user-select: none;
 }
 .dt .dt-header .dt-header-cell:hover:not([data-disabled=true]):is(.sortable), .dt .dt-header .dt-header-cell:active:not([data-disabled=true]):is(.sortable) {
-  background-color: rgba(112, 128, 144, 0.1);
+  background-color: #f1f2f4;
 }
 .dt .dt-header .dt-header-cell:hover:not([data-disabled=true]):is(.sortable) .sort, .dt .dt-header .dt-header-cell:active:not([data-disabled=true]):is(.sortable) .sort {
   display: flex;
 }
 .dt .dt-header .dt-header-cell:hover:not([data-disabled=true]):is(.sortable):active, .dt .dt-header .dt-header-cell:active:not([data-disabled=true]):is(.sortable):active {
-  background-color: rgba(112, 128, 144, 0.2);
+  background-color: #e3e5e9;
 }
 .dt .dt-header .dt-header-cell:hover:not([data-disabled=true]):is(.resizable), .dt .dt-header .dt-header-cell:active:not([data-disabled=true]):is(.resizable) {
   border-right: 1px solid #aaa;
@@ -611,13 +612,13 @@ form {
   border-bottom: 0;
 }
 .dt .dt-body .dt-body-row.selectable:hover .dt-body-row-cell {
-  background-color: rgba(112, 128, 144, 0.1);
+  background-color: #f1f2f4;
 }
 .dt .dt-body .dt-body-row.selectable:active .dt-body-row-cell {
-  background-color: rgba(112, 128, 144, 0.2);
+  background-color: #e3e5e9;
 }
 .dt .dt-body .dt-body-row.selectable.selected .dt-body-row-cell {
-  background-color: rgba(112, 128, 144, 0.2) !important;
+  background-color: #e3e5e9 !important;
 }
 .dt .dt-body .dt-body-row .dt-body-row-cell {
   display: flex;
@@ -1197,12 +1198,6 @@ form {
   border-color: transparent #333 transparent transparent;
 }
 
-.ActionBar {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.4em;
-}
 .ActionBar .divider {
   border-left-width: 1.5px;
   margin: 0 0.15em;
@@ -1280,7 +1275,7 @@ form {
 }
 .Navigation .header .title {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.45em;
   font-weight: 600;
   white-space: nowrap;
   margin-left: 1.2em;
@@ -1335,22 +1330,10 @@ form {
   align-items: center;
   justify-content: center;
   color: #fff;
-  min-height: 8em;
+  min-height: 7em;
   font-size: 1.05em;
   font-weight: 500;
   opacity: 0.6;
-}
-
-.PageFooter {
-  display: flex;
-  width: 100%;
-}
-.PageFooter .info {
-  display: flex;
-  align-items: center;
-}
-.PageFooter .info .icon {
-  margin-right: 0.6em;
 }
 
 .PageHeader {
@@ -1441,9 +1424,11 @@ form {
   flex-direction: column;
   width: 100%;
 }
+.Tabs .tab {
+  color: rgba(0, 0, 0, 0.6);
+}
 .Tabs .tab.horizontal {
   justify-content: center;
-  color: #666;
 }
 .Tabs .tab.vertical {
   margin-bottom: 0.2em;
@@ -1457,10 +1442,10 @@ form {
   background-color: rgba(112, 128, 144, 0.1) !important;
 }
 .Tabs .tab.button.active {
-  color: #000;
+  color: inherit;
 }
 .Tabs .tab.button:not(.active):hover {
-  color: #000;
+  color: inherit;
   background-color: transparent;
 }
 
@@ -1542,17 +1527,6 @@ form {
   margin: 0 0.15em;
 }
 
-.TaskPageFileSettingsFilter {
-  width: min-content;
-  position: relative;
-  top: -9px;
-}
-.TaskPageFileSettingsFilter .action-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0 0.3em 0.75em;
-}
 .TaskPageFileSettingsFilter .dt-header-cell {
   background-color: #f0f1f2;
 }
@@ -1629,14 +1603,4 @@ form {
 }
 .TaskPageExceptions .table table tbody tr td .checkbox {
   padding: 0.3em 0;
-}
-
-.TaskFilesPage .bar {
-  display: flex;
-  align-items: center;
-  padding: 0 0.6em;
-}
-.TaskFilesPage .bar .checkbox {
-  margin-right: 0.9em;
-  margin-bottom: 0.3em;
 }
